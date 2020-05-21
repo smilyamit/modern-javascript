@@ -1,0 +1,202 @@
+
+#1 In javascript most method doesnot  alter the original value but some method do alter 
+eg let names = ["amit", "vivek","poo"]
+ *methos which doesnot alter
+let final = names.concat(["pinaci", "hanu"])  # it will temporarily concat the name means if we comment it out this line but
+
+*method which does alter
+let final = names.push(["pinaci", "hanu"]])  # it will pushed the item permanently even if we comment this line
+let final = names.pop()                      # it will poped out last  item permanently even if we comment this line
+
+#2 in js
+ -two equal (==)only compares value but three equal (===) compare value and type
+ 
+ #3 to convert number to string and string to no , use below readymade functions
+ eg let result = 30
+      result = String(30)
+    console.log(result)
+    
+    let score = "100"
+        score = Number(score)
+        console.log(score)
+
+# in modern js
+let material="ball"   *let is used when in future u may chnage variable value
+const material=" p@ssword123"   *const is used when in future u may not chnage variable value
+
+#one  good example of if statement
+const password = pass@12345
+if (password.length >= 10 && password.include("@", "!")){
+   console.log("that password is mighty strong
+
+} else if (password.length>=10){
+        console.log("password is acceptable but password is nnot strong"
+} else (){
+     console.log("please enter password greater than length 10")
+}
+
+# in js  AND is written as &&
+         OR  is written as ||
+
+
+# switch is used with break and it uses strict equality means === format
+
+
+#two way to declare function in js
+function declaration
+function expression. (this expression can becalled in different form with only (), ()=>, (radius, height)=>)
+
+// function declaration
+function greet(){
+  console.log('hello there');
+}
+
+// function expression
+const speak = function(){
+  console.log('good day!');
+};
+
+// greet();
+// greet();
+
+// speak();
+
+Note function declaration is hoisted automaticallly at top so if u call function and declare afterwards than also possible
+but
+with function expression u have to declare function first than calll the function (best method, no confusion)
+
+
+// arguments & parameters (using function expression not func decl)
+
+const speak = function(name = 'luigi', time = 'night'){
+  console.log(`good ${time}, ${name}!`);
+};
+
+// speak('mario', 'morning');
+// speak();
+// speak('shaun');
+
+#function and method both are same only the difference ismethos is only called on object
+eg
+const name = 'shaun';
+
+// function
+
+const greet = () => {
+  return 'hello';
+};
+
+let resultOne = greet();
+console.log(resultOne);
+
+// method
+
+let resultTwo = name.toUpperCase();
+console.log(resultTwo);
+
+
+# callbacks & forEach method
+
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+
+* by function expression method
+const logPerson = (person, index) => {
+  console.log(`${index} - hello ${person}`);
+}
+
+*by forEach method 1
+// people.forEach(person => {
+//   console.log(`hello ${person}`);
+// });
+
+*by forEach method 2 (using already made fun expression)
+people.forEach(logPerson);
+
+# Callback function are just normal function that we pass in to another function or another method as an argument
+# to comment in vscode- just select all code which u want to comment and than type cmd +/
+
+
+#Ojects in Js
+=> Object in js are have properties  and things they can do(methods)
+for eg while creating a blog object we have
+properties like: title, content, author
+methods like : publish, unpublish, delete
+
+* // object literals
+
+let user = {
+  name: 'crystal',
+  age: 30,
+  email: 'crystal@thenetninja.co.uk',
+  location: 'berlin',
+  blogs: ['why mac & cheese rules', '10 things to make with marmite'],
+  login(){
+    console.log('the user logged in');
+  },
+  logout(){
+    console.log('the user logged out');
+  },
+  logBlogs(){
+    // access the blogs here
+    // console.log(this);
+    console.log('this user has written these blogs:');
+    this.blogs.forEach(blog => {
+      console.log(blog);
+    })
+  }
+};
+
+// console.log(this);
+user.logBlogs();
+
+*Note: "this" keyword is a context object & it represent the context inwhich the current code is executed
+       if this is used inside the root of the document than it is considered as window object (as global context)
+       but if this is used with any key than it is considered as object
+       
+       if this is used with arrow function than it will act as window object
+
+
+
+# js has some built-in object such as math, datetime
+
+console.log(Math.PI)
+const area = 7.6
+console.log(Math.round(area);
+console.log(Math.floor(area);
+console.log(Math.ceil(area)
+const random = Math.random()
+console.log(random)
+console.log(Math.round(random*100))
+
+2 main Data types in Js: Primitive type , Reference type
+Prim type: numbers, strings, boolean, null, undefned, symbols
+Reference type: all type of object, object literals, arrays, functions, dates, all other objects
+
+Primitive type are stored in the stack
+Reference type are stored in the heap
+
+when we make a copy of a primitive data type than we are making copy in a stack (for no, strings)
+but for ref dtype when we make a copy of data literal, array (actually we are making copy of a pointer in a stack)
+
+For eg
+// primitive values
+
+let scoreOne = 50;
+let scoreTwo = scoreOne;
+console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
+
+scoreOne = 100;
+console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
+here value of score one updated but scoretwo remain same (because they are stored in different space in stack separately)
+
+// reference values
+
+userOne = { name: 'ryu', age: 30 };
+userTwo = userOne;
+console.log(userOne, userTwo);
+
+userOne.name = 'chun-li';
+console.log(userOne, userTwo);
+
+here if any value in reference datype(object data type in heap) changes its copied variable value also changes because 
+both are related with pointer in stack but is actually a same object
