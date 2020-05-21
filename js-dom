@@ -1,0 +1,70 @@
+
+resume.io (to create resume)
+#1 DOM: Document objective model 
+-dom is created by the browser (its a heart of any kind of document manipulation)
+it something created by browser when html document load inside it
+- document object
+The nodes of every document are organized in a tree structure, called the DOM tree, with the topmost node named as " Document
+object
+=>When an HTML document is loaded into a web browser, it becomes a document object
+=>The document object is the root node of the HTML document
+Document Object Properties and Methods:
+
+Property / Method.           Description
+
+getElementById()	           Returns the element that has the ID attribute with the specified value
+getElementsByClassName()	   Returns a HTMLCollection containing all elements with the specified class name
+getElementsByName()	         Returns a HTMLCollection containing all elements with a specified name
+getElementsByTagName()	     Returns a HTMLCollection containing all elements with the specified tag name
+
+
+characterSet	                Returns the character encoding for the document
+createAttribute()	            Creates an attribute node
+createComment()	              Creates a Comment node with the specified text
+createDocumentFragment()	    Creates an empty DocumentFragment node
+createElement()	              Creates an Element node
+createEvent()	                Creates a new event
+
+
+designMode	              Controls whether the entire document should be editable or not.
+doctype	                  Returns the Document Type Declaration associated with the document
+documentElement	          Returns the Document Element of the document (the <html> element)
+documentMode	            Returns the mode used by the browser to render the document
+documentURI          	    Sets or returns the location of the document
+domain	                  Returns the domain name of the server that loaded the document
+
+*important query selector
+document.querySelector('')
+document.querySelectorAll('')
+
+document.getElementById('')
+document.getElementByClassName('')
+document.getElementsByTagName('')
+Note forEach method can not be applied to html collection method (document.getElementByClassName(''))
+We can use any of the method either querselector ordocument.getelement
+
+*Difference between methods and property
+in property there is no  ()    eg .innerText, innerHTML
+in method there is always ()
+
+eg : to use forEach method with query selector
+#in js
+const content = document.querySelector('.content')
+const peoples = ['amit', 'vivek', 'poo']
+
+peoples.forEach(person=>{
+    content.innerHTML += `<p>${person}</p>`
+})
+# in html
+<div>
+        <p class="content">this is elegant</p>
+    </div>
+
+
+# html attributes eg
+style (for giving color), href(for linking), class(to add any type of element)
+
+# to print al css style format in console
+
+const title = document.querySelector('h2');
+console.log(title.style)
