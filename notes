@@ -24,7 +24,7 @@ let final = names.pop()                      # it will poped out last  item perm
 let material="ball"   *let is used when in future u may chnage variable value
 const material=" p@ssword123"   *const is used when in future u may not chnage variable value
 
-#one  good example of if statement
+##one  good example of if statement
 const password = pass@12345
 if (password.length >= 10 && password.include("@", "!")){
    console.log("that password is mighty strong
